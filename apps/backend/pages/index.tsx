@@ -1,4 +1,4 @@
-import Frontend from './frontend';
+import Backend from './backend';
 import styles from './index.module.css';
 
 export function Index() {
@@ -11,7 +11,7 @@ export function Index() {
     <div className={styles.page}>
       <div className="wrapper">
         <div className="container">
-          <Frontend />
+          <Backend />
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>
@@ -392,7 +392,7 @@ export function Index() {
                 </svg>
                 View project details
               </summary>
-              <pre>nx show project frontend --web</pre>
+              <pre>nx show project backend --web</pre>
             </details>
             <details>
               <summary>
