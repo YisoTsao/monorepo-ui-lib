@@ -1,4 +1,5 @@
 import Frontend from './frontend';
+import { UiLibrary } from '@sg';
 import styles from './index.module.css';
 
 export function Index() {
@@ -12,6 +13,8 @@ export function Index() {
       <div className="wrapper">
         <div className="container">
           <Frontend />
+
+          <UiLibrary />
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>

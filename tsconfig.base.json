@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sg": ["ui-library/src/index.ts"],
+      "@sg/server": ["ui-library/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
