@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sg": ["ui-library/src/index.ts"],
-      "@sg/server": ["ui-library/src/server.ts"]
+      "@fe-booking-monorepo/ui-lib": ["ui-lib/src/index.ts"],
+      "@fe-booking-monorepo/ui-lib/server": ["ui-lib/src/server.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

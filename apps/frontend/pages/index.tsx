@@ -1,5 +1,6 @@
 import Frontend from './frontend';
-import { UiLibrary } from '@sg';
+import { UiLib, Button } from '@fe-booking-monorepo/ui-lib';
+import { HelloServer } from '@fe-booking-monorepo/ui-lib/server';
 import styles from './index.module.css';
 
 export function Index() {
@@ -14,7 +15,9 @@ export function Index() {
         <div className="container">
           <Frontend />
 
-          <UiLibrary />
+          <Button />
+          <HelloServer />
+          <UiLib />
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>

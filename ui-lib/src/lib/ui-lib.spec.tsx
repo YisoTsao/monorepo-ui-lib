@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import UiLibrary from './ui-library';
+import UiLib from './ui-lib';
 
-describe('UiLibrary', () => {
+describe('UiLib', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<UiLibrary />);
+    const { baseElement } = render(<UiLib />);
     expect(baseElement).toBeTruthy();
   });
 });
