@@ -4,12 +4,12 @@ import {
   UiLibrary,
   Spin,
   CustomUpload,
-  UploadImage,
+  DropImage,
 } from '../../../uiLibrary/src';
-// import { CustomUpload } from '../../../uiLibrary/src/lib/UploadImage/CustomUpload';
 
 export function Index() {
   const [file, setFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
 
   const iconProps = { file, setFile };
 
@@ -21,10 +21,19 @@ export function Index() {
   return (
     <div className={styles.page}>
       <div className="wrapper">
-        <div className="container bg-gray-100">
+        <div className="container p-12">
           {/* <Spin show /> */}
-          <UploadImage {...iconProps} />
-          <CustomUpload {...iconProps} />
+          {/* <div>
+            <div>DropImage</div>
+            <DropImage setFiles={setFiles} />
+          </div> */}
+
+          <input type="file" accept=".png, .jpg, .jpeg" />
+
+          <div>
+            <div>CustomUpload</div>
+            <CustomUpload {...iconProps} />
+          </div>
 
           <UiLibrary />
           <div id="welcome">

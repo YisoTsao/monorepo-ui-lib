@@ -1,16 +1,16 @@
-import { useState, useRef, FC } from 'react';
+import React, { useState, useRef, ChangeEvent } from 'react';
 import ErrorContent from '../Modal/ErrorContent';
 import Modal from '../Modal';
-import BaseTemplate from '../UploadImage/BaseTemplate';
+import BaseTemplate from './BaseTemplate';
 
 interface CustomUploadProps {
   className?: string;
   children?: React.ReactNode;
-  file: File | null;
-  setFile: React.Dispatch<React.SetStateAction<File | null>>;
+  file?: File | null;
+  setFile: (file: File | null) => void;
 }
 
-export const UploadImage: FC<CustomUploadProps> = ({
+export const CustomUpload: React.FC<CustomUploadProps> = ({
   className,
   children,
   file,
@@ -21,14 +21,17 @@ export const UploadImage: FC<CustomUploadProps> = ({
 
   const [modal, setModal] = useState<React.ReactNode | null>(null);
 
-  const hiddenFileInput = useRef<HTMLInputElement>(null);
+  const hiddenFileInput = useRef<HTMLInputElement | null>(null);
 
   const handleImageClick = () => {
+    console.log(hiddenFileInput);
     hiddenFileInput.current?.click();
   };
 
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentFile = event.target.files?.[0];
+
+    console.log(currentFile);
 
     if (!currentFile) {
       setFile(null);
@@ -71,7 +74,7 @@ export const UploadImage: FC<CustomUploadProps> = ({
   return (
     <>
       <button
-        className={className ? `${className}` : ''}
+        className={className ? [className].join(' ') : ''}
         type="button"
         onClick={handleImageClick}
       >
@@ -81,8 +84,8 @@ export const UploadImage: FC<CustomUploadProps> = ({
           ref={hiddenFileInput}
           accept=".png, .jpg, .jpeg"
           onChange={handleImageChange}
-          className="hidden"
-          id="uploadImage"
+          // className="hidden"
+          style={{ display: 'none' }}
         />
       </button>
       {modal && <Modal modal={modal} unsetModal={setModal} />}
@@ -90,4 +93,4 @@ export const UploadImage: FC<CustomUploadProps> = ({
   );
 };
 
-export default UploadImage;
+export default CustomUpload;

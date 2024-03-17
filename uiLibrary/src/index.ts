@@ -2,5 +2,5 @@
 
 export * from './lib/uiLibrary';
 export * from './lib/Spin';
-export * from './lib/UploadImages';
+export * from './lib/DropImage';
 export * from './lib/UploadImage/CustomUpload';
