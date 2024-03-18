@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import styles from './index.module.css';
-import {
-  UiLibrary,
-  Spin,
-  CustomUpload,
-  DropImage,
-} from '../../../uiLibrary/src';
+import { UiLibrary, Spin, CustomUpload, DropImage } from 'uiLibrary/src';
 
 export function Index() {
   const [file, setFile] = useState<File | null>(null);

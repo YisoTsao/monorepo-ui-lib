@@ -10,6 +10,8 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/uiLibrary",
+        "styles": ["apps/ui-lib/styles.css"],
+        "postcssConfig": "apps/ui-lib/postcss.config.js",
         "tsConfig": "uiLibrary/tsconfig.lib.json",
         "project": "uiLibrary/package.json",
         "entryFile": "uiLibrary/src/index.ts",
