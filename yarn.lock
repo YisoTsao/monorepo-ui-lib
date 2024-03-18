@@ -3020,6 +3020,16 @@
   resolved "https://registry.npmjs.org/@storybook/react-dom-shim/-/react-dom-shim-8.0.0.tgz#ba08922217a492fc5167892ad5e6c1a600422bd7"
   integrity sha512-bpT/7XyO9T+mWJojAblnuScum/UI65UksaL1jKYySMpBuW4jTJVE1YPzN1oe9A4me8HQCPeDw4Rg+ZB91H5sKA==
 
+"@storybook/react-webpack5@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.npmjs.org/@storybook/react-webpack5/-/react-webpack5-8.0.0.tgz#b3440edc818616c0f76167fe351ce03ec7f89626"
+  integrity sha512-60+eDG5ajbJ/56KaQ7hIO5+tZZ+tX1dS9Gkq8twIKNjoAx/bUgfM9mD30YaP389bYdJDau30RnCZLAkpEv5ZIg==
+  dependencies:
+    "@storybook/builder-webpack5" "8.0.0"
+    "@storybook/preset-react-webpack" "8.0.0"
+    "@storybook/react" "8.0.0"
+    "@types/node" "^18.0.0"
+
 "@storybook/react@8.0.0":
   version "8.0.0"
   resolved "https://registry.npmjs.org/@storybook/react/-/react-8.0.0.tgz#2a32327d39a2df2b7ac16e330d1113cd7e55e44a"
@@ -5401,6 +5411,11 @@ core-js-pure@^3.23.3:
   version "3.36.0"
   resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.36.0.tgz#ffb34330b14e594d6a9835cf5843b4123f1d95db"
   integrity sha512-cN28qmhRNgbMZZMc/RFu5w8pK9VJzpb2rJVR/lHuZJKwmXnoWOpXmMkxqBB514igkp1Hu8WGROsiOAzUcKdHOQ==
+
+core-js@^3.6.5:
+  version "3.36.0"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.36.0.tgz#e752fa0b0b462a0787d56e9d73f80b0f7c0dde68"
+  integrity sha512-mt7+TUBbTFg5+GngsAxeKBTl5/VS0guFeJacYge9OmHb+m058UwwIm41SE9T4Den7ClatV57B6TYTuJ0CX1MAw==
 
 core-util-is@~1.0.0:
   version "1.0.3"
