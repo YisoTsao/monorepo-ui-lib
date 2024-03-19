@@ -21,7 +21,7 @@ export const DropImage: React.FC<DropImageProps> = ({
     isDragReject,
   } = useDropzone({
     accept: { 'image/png': ['.png'], 'image/jpeg': ['.jpg', '.jpeg'] },
-    maxFiles: 15,
+    maxFiles: 10,
     maxSize: 5000000,
     onDrop: (dropFiles) => {
       const newFiles: File[] = [];
@@ -46,33 +46,27 @@ export const DropImage: React.FC<DropImageProps> = ({
         <input {...getInputProps()} />
         <div className="flex justify-between">
           <div className="w-full bg-gray-light rounded-lg">
-            <div className=" border-2 border-dashed border-gray-c_979 rounded-lg">
-              <div className="flex items-center flex-col p-32">
-                {/* <Image
-                      src="/images/ic-cloud-upload.svg"
-                      alt="上傳圖片"
-                      width={144}
-                      height={144}
-                    ></Image> */}
-                上傳圖片
-                <div className="text-gray-c_ccc m-4 text-xl">
-                  {isDragAccept && <p>All files will be accepted</p>}
-                  {isDragReject && <p>Some files will be rejected</p>}
-                  {!isDragActive && <p>Drop files here to upload</p>}
-                </div>
-                <button type="button">瀏覽檔案</button>
+            <div className="border-2 border-dashed border-2 border-gray-400 rounded-lg bg-gray-100">
+              <div className="flex items-center flex-col p-20">
+                <p className="font-normal text-sm text-gray-400 py-4">
+                  圖片僅支援 png、jpg、jpeg
+                </p>
+
+                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">
+                  上傳圖片
+                </h5>
               </div>
             </div>
           </div>
         </div>
       </div>
       {preview && (
-        <div className="flex gap-2">
+        <div className="flex pt-2 gap-2">
           {previewFiles &&
             previewFiles.length > 0 &&
             previewFiles.map((item: any) => (
-              <div className="w-24 h-24 object-cover" key={item?.uuid}>
-                <img src={item?.preview} alt="" />
+              <div className="" key={item?.uuid}>
+                <img className='w-24 h-24 object-cover' src={item?.preview} alt="" />
               </div>
             ))}
         </div>

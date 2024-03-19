@@ -7,7 +7,8 @@ interface CustomUploadProps {
   className?: string;
   children?: React.ReactNode;
   file?: File | null;
-  setFile: any;
+  setFile?: any;
+  imageUrl?: string;
 }
 
 export const CustomUpload: React.FC<CustomUploadProps> = ({
@@ -15,6 +16,7 @@ export const CustomUpload: React.FC<CustomUploadProps> = ({
   children,
   file,
   setFile,
+  imageUrl,
 }) => {
   const imageMimeType = /image\/(png|jpg|jpeg)/i;
   const DEFAULT_IMAGE_SIZE_LIMIT_IN_BYTES = 5120000; // 5000 KB
@@ -24,7 +26,6 @@ export const CustomUpload: React.FC<CustomUploadProps> = ({
   const hiddenFileInput = useRef<HTMLInputElement | null>(null);
 
   const handleImageClick = () => {
-    console.log(hiddenFileInput);
     hiddenFileInput.current?.click();
   };
 
@@ -78,7 +79,7 @@ export const CustomUpload: React.FC<CustomUploadProps> = ({
         type="button"
         onClick={handleImageClick}
       >
-        {children || <BaseTemplate file={file} />}
+        {children || <BaseTemplate file={file} imageUrl={imageUrl} />}
         <input
           type="file"
           ref={hiddenFileInput}

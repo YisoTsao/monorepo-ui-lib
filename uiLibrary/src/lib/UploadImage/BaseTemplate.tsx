@@ -3,9 +3,10 @@ import { Icon } from '@iconify/react';
 
 interface BaseTemplateProps {
   file?: File | null;
+  imageUrl?: string;
 }
 
-const BaseTemplate: FC<BaseTemplateProps> = ({ file }) => {
+const BaseTemplate: FC<BaseTemplateProps> = ({ file, imageUrl }) => {
   const [tempImage, setTempImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -34,8 +35,12 @@ const BaseTemplate: FC<BaseTemplateProps> = ({ file }) => {
   return (
     <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden items-center">
       <div className="px-4 py-6 w-72 h-56">
-        {tempImage ? (
-          <img className="w-full h-full object-cover" src={tempImage} alt="" />
+        {tempImage || imageUrl ? (
+          <img
+            className="w-full h-full object-cover border-dashed border-2 border-gray-400"
+            src={tempImage || imageUrl}
+            alt=""
+          />
         ) : (
           <div
             id="image-preview"

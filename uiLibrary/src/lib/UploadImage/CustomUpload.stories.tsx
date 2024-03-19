@@ -3,8 +3,9 @@ import type { Meta, StoryFn } from '@storybook/react';
 import { CustomUpload } from './CustomUpload';
 
 interface CustomUploadProps {
-  file: File | null;
-  setFile: any;
+  file?: File | null;
+  setFile?: any;
+  imageUrl?: string;
 }
 
 export default {
@@ -32,11 +33,17 @@ const CustomerTemplate: StoryFn<CustomUploadProps> = (args) => {
 export const Base = Template.bind({});
 Base.args = {
   file: null,
-  setFile: () => {},
+  setFile: () => {
+    return;
+  },
+  imageUrl: '',
 };
 
 export const Customer = CustomerTemplate.bind({});
 Customer.args = {
   file: null,
-  setFile: () => {},
+  setFile: () => {
+    return;
+  },
+  imageUrl: '',
 };
