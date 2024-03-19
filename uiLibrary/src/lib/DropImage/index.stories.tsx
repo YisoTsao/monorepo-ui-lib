@@ -3,6 +3,7 @@ import { DropImage } from './index';
 
 interface DropImageProps {
   preview: boolean;
+  imageUrls?: string[];
   setFiles: React.Dispatch<React.SetStateAction<File[]>>;
 }
 
@@ -11,12 +12,17 @@ export default {
   title: 'DropImage',
 } as Meta;
 
+const demoIcon = [
+  'https://gobobook.s3.ap-northeast-1.amazonaws.com/regions/DEV/vaadin_golf.svg',
+];
+
 const Template: StoryFn<DropImageProps> = (args) => {
   return <DropImage {...args} />;
 };
 
 export const Base = Template.bind({});
 Base.args = {
-  preview: false,
-  setFiles: () => {},
+  preview: true,
+  setFiles: () => ({}),
+  imageUrls: demoIcon,
 };

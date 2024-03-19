@@ -32,8 +32,6 @@ export const CustomUpload: React.FC<CustomUploadProps> = ({
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentFile = event.target.files?.[0];
 
-    console.log(currentFile);
-
     if (!currentFile) {
       setFile(null);
       return;

@@ -37,7 +37,7 @@ const BaseTemplate: FC<BaseTemplateProps> = ({ file, imageUrl }) => {
       <div className="px-4 py-6 w-72 h-56">
         {tempImage || imageUrl ? (
           <img
-            className="w-full h-full object-cover border-dashed border-2 border-gray-400"
+            className="w-full h-full object-contain border-dashed border-2 border-gray-400 p-6 rounded-lg"
             src={tempImage || imageUrl}
             alt=""
           />

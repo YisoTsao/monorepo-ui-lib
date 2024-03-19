@@ -13,6 +13,9 @@ export default {
   title: 'CustomUpload',
 } as Meta;
 
+const demoIcon =
+  'https://gobobook.s3.ap-northeast-1.amazonaws.com/regions/DEV/vaadin_golf.svg';
+
 const Template: StoryFn<CustomUploadProps> = (args) => {
   const [file, setFile] = useState(null);
   return <CustomUpload {...args} file={file} setFile={setFile} />;
@@ -36,7 +39,7 @@ Base.args = {
   setFile: () => {
     return;
   },
-  imageUrl: '',
+  imageUrl: demoIcon,
 };
 
 export const Customer = CustomerTemplate.bind({});
