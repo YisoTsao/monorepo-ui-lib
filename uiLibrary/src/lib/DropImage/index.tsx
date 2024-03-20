@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { v4 as uuidv4 } from 'uuid';
 
+interface ImageItem {
+  map?: any;
+  length?: ImageItem | undefined;
+  url: string;
+  book_items_category_id: string | null;
+}
+
 interface DropImageProps {
   preview?: boolean;
-  imageUrls?: string[];
+  imageUrls?: ImageItem[];
   setFiles: React.Dispatch<React.SetStateAction<File[]>>;
 }
 
@@ -49,7 +56,7 @@ export const DropImage: React.FC<DropImageProps> = ({
         <div className="flex justify-between">
           <div className="w-full bg-gray-light rounded-lg">
             <div className="border-2 border-dashed border-gray-400 rounded-lg bg-gray-100">
-              <div className="flex items-center flex-col p-16">
+              <div className="flex items-center flex-col h-48 justify-center">
                 <p className="font-normal text-sm text-gray-400 py-4">
                   圖片僅支援 png、jpg、jpeg
                 </p>
@@ -65,23 +72,28 @@ export const DropImage: React.FC<DropImageProps> = ({
       {preview && (
         <div className="flex pt-2 gap-2">
           {previewFiles?.length
-            ? previewFiles.length > 0 &&
-              previewFiles.map((item: any) => (
-                <div key={item?.uuid}>
+            ? previewFiles.length > 0
+              ? previewFiles.map((item: any) => (
+                  <div key={item?.uuid}>
+                    <img
+                      className="w-24 h-24 object-cover"
+                      src={item?.preview}
+                      alt=""
+                    />
+                  </div>
+                ))
+              : null
+            : imageUrls && imageUrls.length
+            ? imageUrls.map((item) => (
+                <div key={item?.url}>
                   <img
                     className="w-24 h-24 object-cover"
-                    src={item?.preview}
+                    src={item?.url}
                     alt=""
                   />
                 </div>
               ))
-            : imageUrls &&
-              imageUrls.length &&
-              imageUrls.map((item: string) => (
-                <div key={item}>
-                  <img className="w-24 h-24 object-cover" src={item} alt="" />
-                </div>
-              ))}
+            : null}
         </div>
       )}
     </section>

@@ -3,6 +3,7 @@ import ErrorContent from '../Modal/ErrorContent';
 import Modal from '../Modal';
 import BaseTemplate from './BaseTemplate';
 
+
 interface CustomUploadProps {
   className?: string;
   children?: React.ReactNode;
