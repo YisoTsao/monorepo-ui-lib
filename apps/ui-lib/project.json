@@ -1,8 +1,0 @@
-{
-  "name": "ui-lib",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/ui-lib",
-  "projectType": "application",
-  "targets": {},
-  "tags": []
-}
