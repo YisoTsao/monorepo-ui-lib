@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { v4 as uuidv4 } from 'uuid';
+import { Icon } from '@iconify/react';
 
 interface ImageItem {
   map?: any;
@@ -56,12 +57,20 @@ export const DropImage: React.FC<DropImageProps> = ({
         <div className="flex justify-between">
           <div className="w-full bg-gray-light rounded-lg">
             <div className="border-2 border-dashed border-gray-400 rounded-lg bg-gray-100">
-              <div className="flex items-center flex-col h-48 justify-center">
-                <p className="font-normal text-sm text-gray-400 py-4">
+              <div className="flex justify-center py-8">
+                <Icon
+                  icon="material-symbols:upload"
+                  width="2.5rem"
+                  height="2.5rem"
+                />
+              </div>
+
+              <div className="flex items-center flex-col justify-center">
+                <p className="font-normal text-sm text-gray-400 pb-4">
                   圖片僅支援 png、jpg、jpeg
                 </p>
 
-                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">
+                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700 pb-4">
                   拖曳圖片至此
                 </h5>
               </div>

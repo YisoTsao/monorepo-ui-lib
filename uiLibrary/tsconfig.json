@@ -5,7 +5,11 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "paths": {
+      "@yiso/uiLibrary": ["uiLibrary/src/index.ts"],
+      "@yiso/uiLibrary/*": ["uiLibrary/src/*"]
+    }
   },
   "files": [],
   "include": [],

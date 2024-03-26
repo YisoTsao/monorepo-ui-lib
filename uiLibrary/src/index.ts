@@ -4,3 +4,4 @@ export * from './lib/uiLibrary';
 export * from './lib/Spin';
 export * from './lib/DropImage';
 export * from './lib/UploadImage/CustomUpload';
+export * from './components/ui/switch';
