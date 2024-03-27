@@ -6,7 +6,6 @@ import {
   CustomUpload,
   DropImage,
   Switch,
-  Sidebar,
 } from 'uiLibrary/src';
 
 export function Index() {
@@ -51,7 +50,6 @@ export function Index() {
     <div className={styles.page}>
       <div className="wrapper">
         <div className="flex p-12">
-          <Sidebar items={sidebarItems} />
           <section>
             {/* <Spin show /> */}
             {/* <div>

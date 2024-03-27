@@ -1,5 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react';
-import { Switch } from '../../components/ui/switch';
+import { Switch } from './index';
 
 interface SwitchProps {
   id?: string;
