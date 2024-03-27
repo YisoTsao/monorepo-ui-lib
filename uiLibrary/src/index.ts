@@ -6,3 +6,4 @@ export * from './lib/Spin';
 export * from './lib/DropImage';
 export * from './lib/UploadImage/CustomUpload';
 export * from './lib/Switch';
+export * from './lib/Sidebar';
